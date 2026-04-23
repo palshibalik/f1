@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "season": 2025,
+    "races_analysed": [
+      "Australian Grand Prix",
+      "Chinese Grand Prix",
+      "Japanese Grand Prix",
+      "Bahrain Grand Prix",
+      "Saudi Arabian Grand Prix",
+      "Miami Grand Prix",
+      "Emilia Romagna Grand Prix",
+      "Monaco Grand Prix",
+      "Spanish Grand Prix",
+      "Canadian Grand Prix",
+      "Austrian Grand Prix",
+      "British Grand Prix",
+      "Belgian Grand Prix",
+      "Hungarian Grand Prix",
+      "Dutch Grand Prix",
+      "Italian Grand Prix",
+      "Azerbaijan Grand Prix",
+      "Singapore Grand Prix",
+      "United States Grand Prix",
+      "Mexican City Grand Prix",
+      "S\u00e3o Paulo Grand Prix",
+      "Las Vegas Grand Prix",
+      "Qatar Grand Prix",
+      "Abu Dhabi Grand Prix"
+    ],
+    "n_races": 24,
+    "extraction_notes": "Fuel-corrected (0.034s/kg), SC laps removed, pit in/out laps removed"
+  },
+  "team_race_pace_gaps": {
+    "WIL": 1.8822,
+    "AST": 1.5666,
+    "MER": 1.6248,
+    "HAA": 1.9342,
+    "SAU": 1.6404,
+    "ALP": 2.7038,
+    "FER": 1.2562,
+    "RBT": 1.4307,
+    "MCL": 0.0,
+    "RBR": 1.4676
+  },
+  "team_quali_gaps": {
+    "WIL": 0.9559,
+    "AST": 1.5649,
+    "MER": 0.5199,
+    "SAU": 1.4957,
+    "ALP": 1.1177,
+    "RBT": 0.8327,
+    "FER": 0.6065,
+    "HAA": 1.24,
+    "MCL": 0.0,
+    "RBR": 0.633
+  },
+  "driver_quali_vs_teammate": {
+    "GAS": -0.4515,
+    "DOO": 0.4515,
+    "LEC": -0.5135,
+    "HAM": 0.5135,
+    "NOR": -0.0633,
+    "PIA": 0.0633,
+    "SAI": -0.5072,
+    "ALB": 0.5072,
+    "ALO": -1.5603,
+    "STR": 1.5603,
+    "VER": -1.0796,
+    "TSU": 1.0796,
+    "HAD": -0.3387,
+    "LAW": 0.3387,
+    "RUS": -0.6209,
+    "ANT": 0.6209,
+    "HUL": 0.1318,
+    "BEA": -0.1318
+  },
+  "driver_tyre_management": {
+    "ALB": 0.935,
+    "ANT": 0.791,
+    "BEA": 0.8513,
+    "BOR": 1.2901,
+    "DOO": 1.3731,
+    "GAS": 1.2092,
+    "HAD": 0.9689,
+    "HAM": 0.9133,
+    "HUL": 0.8669,
+    "LAW": 0.7293,
+    "LEC": 0.8949,
+    "NOR": 0.8768,
+    "OCO": 1.0245,
+    "PIA": 0.8881,
+    "RUS": 0.8388,
+    "SAI": 1.1017,
+    "STR": 1.0871,
+    "TSU": 1.2654,
+    "VER": 1.034,
+    "ALO": 1.2996,
+    "COL": 1.103
+  },
+  "compound_degradation": {
+    "MEDIUM": {
+      "mean": 0.0759,
+      "median": 0.0572,
+      "p25": 0.0314,
+      "p75": 0.0963,
+      "n_stints": 325
+    },
+    "HARD": {
+      "mean": 0.0507,
+      "median": 0.0432,
+      "p25": 0.019,
+      "p75": 0.0708,
+      "n_stints": 229
+    },
+    "SOFT": {
+      "mean": 0.111,
+      "median": 0.0848,
+      "p25": 0.0483,
+      "p75": 0.1473,
+      "n_stints": 131
+    }
+  },
+  "circuits": {
+    "Australian": {
+      "baseLap": 90.861,
+      "laps": 57,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Chinese": {
+      "baseLap": 96.768,
+      "laps": 56,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Japanese": {
+      "baseLap": 92.285,
+      "laps": 53,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Bahrain": {
+      "baseLap": 97.52,
+      "laps": 57,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Saudi Arabian": {
+      "baseLap": 93.645,
+      "laps": 50,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Miami": {
+      "baseLap": 91.278,
+      "laps": 57,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Emilia Romagna": {
+      "baseLap": 80.334,
+      "laps": 63,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Monaco": {
+      "baseLap": 76.213,
+      "laps": 78,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Spanish": {
+      "baseLap": 79.875,
+      "laps": 66,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Canadian": {
+      "baseLap": 75.364,
+      "laps": 70,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Austrian": {
+      "baseLap": 69.515,
+      "laps": 70,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "British": {
+      "baseLap": 102.352,
+      "laps": 52,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Belgian": {
+      "baseLap": 107.232,
+      "laps": 44,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Hungarian": {
+      "baseLap": 81.131,
+      "laps": 70,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Dutch": {
+      "baseLap": 74.623,
+      "laps": 72,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Italian": {
+      "baseLap": 82.658,
+      "laps": 53,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Azerbaijan": {
+      "baseLap": 105.232,
+      "laps": 51,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Singapore": {
+      "baseLap": 96.82,
+      "laps": 62,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "United States": {
+      "baseLap": 99.23,
+      "laps": 56,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Mexican": {
+      "baseLap": 81.485,
+      "laps": 71,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "S\u00e3o Paulo": {
+      "baseLap": 73.669,
+      "laps": 71,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Las Vegas": {
+      "baseLap": 95.299,
+      "laps": 50,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Qatar": {
+      "baseLap": 85.416,
+      "laps": 57,
+      "pitLoss": null,
+      "n_races": 1
+    },
+    "Abu Dhabi": {
+      "baseLap": 88.681,
+      "laps": 58,
+      "pitLoss": null,
+      "n_races": 1
+    }
+  },
+  "raw_sample_counts": {
+    "team_race_pace_samples": {
+      "WIL": 46,
+      "AST": 45,
+      "MER": 47,
+      "HAA": 47,
+      "SAU": 21,
+      "ALP": 27,
+      "FER": 47,
+      "RBT": 46,
+      "MCL": 47,
+      "RBR": 46
+    },
+    "compound_deg_samples": {
+      "MEDIUM": 325,
+      "HARD": 229,
+      "SOFT": 131
+    }
+  }
+}
