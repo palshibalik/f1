@@ -1,0 +1,194 @@
+
+D:\Projects\F1\f1-dashboard\print-eslint.js
+  Line 1: 'require' is not defined. (no-undef)
+
+D:\Projects\F1\f1-dashboard\src\pages\Lineup.jsx
+  Line 339: 'e' is defined but never used. (no-unused-vars)
+
+D:\Projects\F1\f1-dashboard\src\pages\Myf1.jsx
+  Line 1: 'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 11: Empty block statement. (no-empty)
+  Line 14: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components. (react-refresh/only-export-components)
+  Line 82: 'driverName' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 99: Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+   97 |
+   98 |   useEffect(() => {
+>  99 |     if (!activeDriver) { setLoading(false); return; }
+      |                          ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  100 |
+  101 |     fetchJSON("https://api.jolpi.ca/ergast/f1/current/driverStandings.json")
+  102 |       .then(d => { (react-hooks/set-state-in-effect)
+  Line 109: 'teamFound' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+
+D:\Projects\F1\f1-dashboard\src\pages\News.jsx
+  Line 254: Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  252 |   }, []);
+  253 |
+> 254 |   useEffect(() => { loadFeeds(); }, [loadFeeds]);
+      |                     ^^^^^^^^^ Avoid calling setState() directly within an effect
+  255 |
+  256 |   const sources  = ["All", ...RSS_FEEDS.map(f => f.name)];
+  257 |   const filtered = filter === "All" ? articles : articles.filter(a => a.source === filter); (react-hooks/set-state-in-effect)
+
+D:\Projects\F1\f1-dashboard\src\pages\NextRace.jsx
+  Line 47: Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  45 |
+  46 |   const dur    = SESSION_DURATION[session.type] || 3600000;
+> 47 |   const now    = Date.now();
+     |                  ^^^^^^^^^^ Cannot call impure function
+  48 |   const isLive = now >= session.ms && now <= session.ms + dur;
+  49 |   const isDone = now > session.ms + dur;
+  50 |   const col    = typeColors[session.type] || "var(--red)"; (react-hooks/purity)
+  Line 113: Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  111 |   const [totalRounds, setTotalRounds] = useState(24);
+  112 |   const [error,       setError]       = useState(false);
+> 113 |   const [now,         setNow]         = useState(Date.now());
+      |                                                  ^^^^^^^^^^ Cannot call impure function
+  114 |
+  115 |   useEffect(() => {
+  116 |     const id = setInterval(() => setNow(Date.now()), 60000); (react-hooks/purity)
+
+D:\Projects\F1\f1-dashboard\src\pages\Notes.jsx
+  Line 1: 'useCallback' is defined but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 10: Empty block statement. (no-empty)
+
+D:\Projects\F1\f1-dashboard\src\pages\Racestory.jsx
+  Line 71: Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  69 |   // Reset to "quali" whenever the race changes (sprint may not exist for new race)
+  70 |   useEffect(() => {
+> 71 |     setView("quali");
+     |     ^^^^^^^ Avoid calling setState() directly within an effect
+  72 |   }, [quali, sprint]);
+  73 |
+  74 |   // Resolve active data — if view is "sprint" but sprint is empty/null, fall back to quali (react-hooks/set-state-in-effect)
+  Line 265: Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  263 |   useEffect(() => {
+  264 |     if (!selected) return;
+> 265 |     setLoadingRace(true);
+      |     ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  266 |     setResults(null);
+  267 |     setPits(null);
+  268 |     setQuali(null); (react-hooks/set-state-in-effect)
+
+D:\Projects\F1\f1-dashboard\src\pages\Strategy.jsx
+  Line 1: 'useCallback' is defined but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 104: 'compoundRole' is defined but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 949: 'getPitLap' is defined but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 954: 'total' is defined but never used. (no-unused-vars)
+  Line 1005: 'tick' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 1038: React Hook useEffect has a missing dependency: 'sorted'. Either include it or remove the dependency array. (react-hooks/exhaustive-deps)
+  Line 1040: Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  1038 |   }, [scrubLap]);
+  1039 |
+> 1040 |   const now = performance.now();
+       |               ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  1041 |   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+  1042 |
+  1043 |   return ( (react-hooks/purity)
+  Line 1122: 'scrubLap' is defined but never used. (no-unused-vars)
+  Line 1511: 'selDriver' is defined but never used. (no-unused-vars)
+  Line 1580: 'total' is defined but never used. (no-unused-vars)
+  Line 1848: 'selDriver' is defined but never used. (no-unused-vars)
+  Line 1959: 'LAPS' is defined but never used. (no-unused-vars)
+  Line 2075: React Hook useEffect has a missing dependency: 'draw'. Either include it or remove the dependency array. (react-hooks/exhaustive-deps)
+  Line 2143: 'avgField' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 2217: Empty block statement. (no-empty)
+  Line 2237: 'hasRun' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u. (no-unused-vars)
+  Line 2271: React Hook useEffect has missing dependencies: 'trackKey' and 'weather'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setGridOrder' needs the current value of 'trackKey'. (react-hooks/exhaustive-deps)
+  Line 2445: Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  2443 |       team: teamData.name, pos: raceResult.userFinishPos,
+  2444 |       time: raceTime, stops: normStints.length - 1,
+> 2445 |       push: pushMode, ts: Date.now(),
+       |                           ^^^^^^^^^^ Cannot call impure function
+  2446 |     };
+  2447 |     const lb = await loadLB();
+  2448 |     lb.push(entry); (react-hooks/purity)
+
+D:\Projects\F1\f1-dashboard\src\pages\live.jsx
+  Line 417: Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  415 |   const [parts, setParts] = useState(null);
+  416 |   useEffect(() => {
+> 417 |     if (!isoTarget) { setParts(null); return; }
+      |                       ^^^^^^^^ Avoid calling setState() directly within an effect
+  418 |     const targetMs = new Date(isoTarget).getTime();
+  419 |     if (isNaN(targetMs)) { setParts(null); return; }
+  420 |     function tick() { (react-hooks/set-state-in-effect)
+  Line 449: Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  447 |   ].filter(s => s.data?.date) : [];
+  448 |
+> 449 |   const now = Date.now();
+      |               ^^^^^^^^^^ Cannot call impure function
+  450 |   const sessionsWithTs = allSessions.map(s => {
+  451 |     // Always append Z to treat as UTC — prevents local-timezone shift
+  452 |     const timeStr = s.data.time && s.data.time !== "undefined" (react-hooks/purity)
+  Line 713: React Hook useEffect has missing dependencies: 'driversRef' and 'positionsRef'. Either include them or remove the dependency array. (react-hooks/exhaustive-deps)
+  Line 810: Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+  808 |         <div style={{ display: "flex", overflowX: "auto", borderTop: "1px solid var(--border)",
+  809 |           background: "#030303", scrollbarWidth: "none" }}>
+> 810 |           {carsState.slice(0, 5).map((pos, idx) => {
+      |                                      ^^^^^^^^^^^^^^^
+> 811 |             const dNumN = dn(pos.driver_number);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 812 |             const d     = (driversRef.current || {})[dNumN];
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 831 |             );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 832 |           })}
+      | ^^^^^^^^^^^^ Cannot access ref value during render
+  833 |           {carsState.length > 5 && (
+  834 |             <div style={{ display: "flex", alignItems: "center", padding: "0 10px",
+  835 |               fontFamily: "var(--font-head)", fontSize: 8, color: "var(--text-muted)", flexShrink: 0 }}> (react-hooks/refs)
